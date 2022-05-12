@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+
+	padding: 0%;
+	margin: 0%;
+	box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+@font-face {
+  font-family: Oleo;
+  src: url(assets/fonts/OleoScriptSwashCaps-Regular.ttf);
+};
+
+@font-face {
+  font-family: Jaldi;
+  src: url(assets/fonts/Jaldi-Regular.ttf);
+};
+
+// Colors
+$red1: #ED4040;
+$yellow1: #FAD511;
+$yellow2: #ffe259;
+$orange1: #ffa751;
+
+.rainbow2{
+  width: 100%;
+  display: block;
+  margin: 20px 0;
+  border: none;
+  height: 4px;
+  z-index: 9;
+
+  background: #ff0000;
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ff0000), color-stop(25%,#ffff00), color-stop(50%,#00ff00), color-stop(75%,#00ffff), color-stop(100%,#0000ff));
+  background: -webkit-linear-gradient(-45deg, #ff0000 0%,#ffff00 25%,#00ff00 50%,#00ffff 75%,#0000ff 100%);
+  background: -moz-linear-gradient(-45deg, #ff0000 0%, #ffff00 25%, #00ff00 50%, #00ffff 75%, #0000ff 100%);
+  background: -o-linear-gradient(-45deg, #ff0000 0%,#ffff00 25%,#00ff00 50%,#00ffff 75%,#0000ff 100%);
+  background: -ms-linear-gradient(-45deg, #ff0000 0%,#ffff00 25%,#00ff00 50%,#00ffff 75%,#0000ff 100%);
+  background: linear-gradient(-45deg, #ff0000 0%,#ffff00 25%,#00ff00 50%,#00ffff 75%,#0000ff 100%);
+}

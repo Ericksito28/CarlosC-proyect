@@ -1,0 +1,210 @@
+<!-- CARROUSEL -->
+<div  *ngIf="images && images.length > 0" class="carrousel-container">
+  <img  *ngFor="let image of images; let i = index"
+  [src]="image.imageSrc" [alt]="image.imageAlt"
+  [ngClass]="{'image-active': selectedIndex === i }"
+  class="fade"
+  >
+
+  <div class="carrousel-info">
+    <h1>Bienvenid@ a mi sitio web</h1>
+    <p>Carlos Cortéz. Diseñador gráfico orientado a publicidad y arte profesional</p>
+    <!-- <a href="#habilidades">Habilidades</a> -->
+    <!-- <a href=""></a> -->
+    <!-- <a href=""></a> -->
+  </div>
+
+
+  <div   *ngIf="indicators" class="carrousel-dot_container">
+    <span  *ngFor="let dot of images; let i = index" class="dot" [ngClass]="{'active': selectedIndex === i}"
+      (click)="selectImage(i)"
+    >
+
+    </span>
+  </div>
+
+  <div *ngIf="controls" class="btn-carrousel btn-prev">
+    <i class='bx bx-skip-previous' (click)="onPrevClick()" ></i>
+    <!-- <i class='bx bx-skip-next' ></i> -->
+  </div>
+  <div *ngIf="controls" class="btn-carrousel btn-next">
+    <!-- <i class='bx bx-skip-previous' (click)="onPrevClick()" ></i> -->
+    <i class='bx bx-skip-next' (click)="onNextClick()" ></i>
+
+  </div>
+
+</div>
+
+<!-- FIN DE CARROUSEL -->
+
+
+
+<section class="profesional-info">
+  <div class="photo-container">
+    <div class="photo-C"></div>
+  </div>
+
+  <div class="card-info">
+    <h1>Carlos Cortéz Silva</h1>
+    <h3>Diseñador gráfico profesional</h3>
+    <p>Experiencia de 12 años haciendo diseño gráfico, publicitario y artístico, enfocado a marca personal o a empresas entre otras cosas.</p>
+
+    <button class="proyects-button" routerLink="proyects">Ver proyectos</button>
+
+  </div>
+</section>
+
+<hr class="rainbow2">
+
+
+<h1 id="habilidades" class="skills-title">Habilidades</h1>
+<section class="skills">
+
+  <div class="skills-container">
+    <div class="illustrator-container"></div>
+    <div class="skills-info">
+      <h2>Adobe Illustrator</h2>
+      <p>Diseño vectorial con Adobe illustrator,cualquier tipo de íconos personalizados, ilustraciones, publicidad etc.</p>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="photoshop-container"></div>
+    <div class="skills-info">
+      <h2>Adobe Photoshop</h2>
+      <p>Diseño y edición de imágenes avanzado con las herramientas de Adobe Photoshop siempre en su última versión</p>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="corel-container"></div>
+    <div class="skills-info">
+      <h2>CorelDraw</h2>
+      <p>Diseño vectorial y especializado en elementos publicitarios como carteles, tarjetas, pancartas etc.</p>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="AutoCad-container"></div>
+    <div class="skills-info">
+      <h2>AutoCAD</h2>
+      <p>Modelado en 2d y 3d de forma precisa con sólidos, superficies, objetos de malla, características de documentación etc. Diseño enfocado únicamente en el sector de arquitectura o modelos específicos de publicidad/p>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="Figma-container"></div>
+    <div class="skills-info">
+      <h2>Figma</h2>
+      <p>Diseño vectorial de interfaces web, para páginas y aplicaciones así como la elaboración de prototipos para simular el comportamiento de estas</p>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="zBrush-container"></div>
+    <div class="skills-info">
+      <h2>ZBrush</h2>
+      <p>Diseño, modelado, escultura y pintura de elemntos 3D de todo tipo, tanto modelos específicos como maquetación a escala digital de proyectos arquitectónicos</p>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="filmora-container"></div>
+    <div class="skills-info">
+      <h2>Filmora</h2>
+      <p>Edición avanzada de video con Filmora en su última versión, especialidad en diseño de videos publicitarios o clips para añadir a las campañas </p>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="animate-container"></div>
+    <div class="skills-info">
+      <h2>Adobe Animate</h2>
+      <p>Animación en 2d orientado al arte o a la publicidad. Integración de animaciones a campañas publicitarias o a proyectos similares/p>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="teoriaColor-container"></div>
+    <div class="skills-info">
+      <h2>Teoría del color</h2>
+      <p>Conocimiento de las reglas específicas para lograr la correcta, pigmentación, combinación de colores  y efectos de sombreado en base al estudio de la luz y su comportamiento</p>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="diseñoEmpresarial-container"></div>
+    <div class="skills-info">
+      <h2>Diseño Empresarial</h2>
+      <p>Diseño de logotipos, paleta de colores para empresas así como diseño publicitario de acuerdo a las necesidades del cliente. Diseño de marca y también diseño creativo para redes sociales</p>
+    </div>
+  </div>
+
+</section>
+
+<hr class="rainbow2">
+
+<h1 class="extra-title">Lo que ofrezco</h1>
+<section class="extra-info" >
+  <div class="card-extra">
+    <i class='bx bxs-lock-alt'></i>
+    <p>Enrtega de tu pedido de forma segura</p>
+  </div>
+  <div class="card-extra">
+    <i class='bx bxs-id-card'></i>
+    <p>Garantía de cambios de 1 mes</p>
+  </div>
+  <div class="card-extra">
+    <i class='bx bxs-folder-open'></i>
+    <p>Acceso a los documentos originales</p>
+  </div>
+  <div class="card-extra">
+    <i class='bx bx-color'></i>
+    <p>Plus de paleta de colroes alternativos</p>
+  </div>
+  <div class="card-extra">
+    <i class='bx bxs-phone-outgoing'></i>
+    <p>Contacto constante y directo</p>
+  </div>
+  <div class="card-extra">
+    <i class='bx bxs-archive-in'></i>
+    <p>Respaldo de proyeecto</p>
+  </div>
+
+</section>
+<hr class="rainbow2">
+<section class="ultimate-info" id="hola">
+  <h1>Información extra</h1>
+  <ul>
+    <li>Definición de proyecto por método que prefiera el cliente (llamada, reunión virtual, documentación)</li>
+    <li>Entrega de archivos por método que prefiera el cliente</li>
+    <li>Colores de contraste y modo oscuro para logos</li>
+    <li>Entrega de archivo final y editable (original)</li>
+    <li>Reporte progresivo de avance en proyectos</li>
+  </ul>
+
+  <!-- <img [src]="'src/assets/svg/design1'"alt="svg1"> -->
+  <div class="svgs-container">
+    <div class="svg2-container"></div>
+    <div class="svg1-container"></div>
+  </div>
+
+</section>
+
+<footer class="home-footer" >
+  <div class="footer-info">
+
+    <div class="social-media">
+      <p>Mis redes sociales</p>
+      <div class="social-media_icons">
+      <i class='bx bxl-instagram-alt' ></i>
+      <i class='bx bxl-whatsapp'></i>
+      <i class='bx bxl-twitter' ></i>
+      <i class='bx bxl-twitch' ></i>
+      <i class='bx bxl-linkedin' ></i>
+      <i class='bx bxl-tiktok' ></i>
+      </div>
+    </div>
+    <!-- <hr class="rainbow2"> -->
+    <div class="contact-info">
+      <h4>Contacto directo</h4>
+      <p><strong>Teléfono:</strong> +52 1 777 129 86 44</p>
+      <p><strong>e-mail:</strong> carlos.cortez.diseño@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="copy">Carlos Cortéz 2022 &copy; Todos los derechos reservados  </div>
+</footer>
+
+

@@ -1,0 +1,894 @@
+@import '../../../styles.scss';
+
+html {
+  scroll-behavior: smooth !important;
+};
+
+// Estilos del carrusel -------------------------------------------------------------------------------------------
+.carrousel-container{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  img{
+    display: none;
+    filter: brightness(.63);
+  }
+
+  img.image-active{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .carrousel-dot_container{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 1rem;
+
+
+    .dot{
+      cursor: pointer;
+      height: 13px;
+      width: 13px;
+      margin: 0 5px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      transition: opacity 0.6s ease;
+      opacity: 0.5;
+    }
+
+    .active, .dot:hover {
+      opacity: 1;
+    }
+
+  }
+
+  .fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.btn-carrousel {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background: 0 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-prev {
+  left: 0;
+  font-size: 30px;
+
+  i {
+      // color: red !important;
+    color: #fff;
+    opacity: .5;
+    transition: all  .15s ease;
+    &:hover{
+      opacity: .9;
+    }
+    &:active{
+      opacity: .5;
+    }
+  }
+
+
+}
+.btn-next {
+  right: 0;
+  font-size: 30px;
+  i {
+    color: #fff;
+    // color: red !important;
+    opacity: .5;
+    transition: all  .15s ease;
+    &:hover{
+      opacity: .9;
+    }
+    &:active{
+      opacity: .5;
+    }
+  }
+
+
+}
+
+
+.carrousel-info{
+  position: absolute;
+  width: 80%;
+  // background-color: $red1;
+  filter: opacity(.8);
+  border-radius: 10px;
+  top: 30%;
+  right: 10%;
+  h1{
+    font-family: Oleo;
+    color: $red1;
+    font-size: 65px;
+    cursor: pointer;
+    transition: all 300ms;
+    &:hover{
+      transform: scale(1.02);
+      // transform: scale(1.02) skewY(-8deg);
+
+    }
+  }
+  p{
+    color: white;
+    font-family: Jaldi;
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 300ms;
+    &:hover{
+      transform: scale(1.02);
+      // transform: scale(1.02) skewY(-8deg);
+
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+    .carrousel-info{
+      h1{
+        font-size: 40px;
+      }
+      p{
+        font-size: 20px;
+      }
+    }
+}
+
+// Fin de Estilos del carrusel -------------------------------------------------------------------------------------------
+
+
+
+// Información profesional
+
+.photo-C{
+  width: 100%;
+  height: 100%;
+  background: url(../../../assets/img/carlos1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 20px;
+}
+.profesional-info{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  margin: 85px auto;
+
+  .photo-container{
+    width: 100%;
+    height: 220px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-info{
+    text-align: center;
+    width: 90%;
+    padding: 20px;
+    h1{
+      font-family: Oleo;
+      margin: 20px 0;
+    }
+    h3{
+      margin: 20px 0;
+      font-family: Jaldi;
+    }
+    p{
+      margin: 20px auto;
+      font-family: Jaldi;
+      font-weight: bold;
+      padding: 15px;
+      width: 100%;
+    }
+  }
+
+}
+
+
+
+// ANIMACIONES DE BOTÓN CHIDORRIS
+.proyects-button{
+  cursor: pointer;
+  transition: all 300ms;
+  font-family: Jaldi;
+  &:hover{
+    transform: scale(1.05);
+
+  }
+}
+.proyects-button,
+.proyects-button::after {
+
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, $red1 5%);
+ border: 0;
+ color: #fff;
+ letter-spacing: 3px;
+ line-height: 1;
+ box-shadow: 6px 0px 0px $yellow1;
+ outline: transparent;
+ position: relative;
+}
+
+.proyects-button::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+ clip-path: var(--slice-0);
+}
+
+.proyects-button:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
+}
+
+
+
+// Skills
+// Adobe Ilustrator, Adobe Photoshop, CorelDraw, AutoCad, Figma, Zbrush, Filmora, Adobe Animate, Teoría del color, Diseño gráfico empresarial. = 10
+.skills-title {
+  font-family: Oleo;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 60px;
+}
+.skills {
+  width: 100%;
+  padding: 15px;
+  margin: 30px auto ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+
+  > div {
+    width: 90%;
+    height: 405px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F7971E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 300ms;
+    &:hover{
+      transform: scale(1.03);
+    }
+
+    >div:first-child{ // Este es el contenedor de la imagen de la habilidad
+      margin: 0 auto;
+      width: 150px;
+      height: 150px;
+      margin-top: 10px;
+    }
+
+    .skills-info {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+
+      h2{
+        font-family: Oleo;
+        margin: 15px 0;
+        text-align: center;
+      }
+      p{
+        font-family: Jaldi;
+        text-align: center;
+        line-height: 20px;
+      }
+    }
+
+  }
+
+}
+
+
+
+.extra-info {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  .card-extra {
+    width: 48%;
+    // background-color: $red1;
+    color: white;
+    font-family: Jaldi;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    height: 220px;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 28px 0;
+    cursor: pointer;
+    transition: all 300ms;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 0 4px;
+    }
+
+    i{
+      font-size: 60px;
+    }
+    p{
+      margin-top: 20px;
+      font-size: 18px;
+      word-spacing: .1px;
+      line-height: 16px;
+    }
+
+  }
+  .card-extra:nth-child(1){
+    background-color: $red1
+  };
+  .card-extra:nth-child(2){
+  background-color: $yellow1
+  };
+  .card-extra:nth-child(3){
+    background-color: $red1
+
+  };
+  .card-extra:nth-child(4){
+  background-color: $yellow1
+
+  };
+  .card-extra:nth-child(5){
+    background-color: $red1
+
+  };
+  .card-extra:nth-child(6){
+  background-color: $yellow1
+
+  };
+
+}
+
+// Info de hasta abajo
+.ultimate-info{
+  margin: 20px 0;
+  width: 100%;
+  background-color: $red1;
+  padding: 35px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  h1 {
+    font-family: Oleo;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  ul{
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: Jaldi;
+    // align-items: center;
+    margin: 0 auto;
+    list-style: square;
+
+    li {
+      // width: 90%;
+      margin: 15px 0;
+      font-weight: bold;
+      // display: flex;
+      // justify-content: center;
+      // text-align: center;
+    }
+
+  }
+  .svgs-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .svg1-container{
+    width: 300px;
+    height: 300px;
+    background: url(../../../assets/svg/design1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 14;
+    margin-right: 15px;
+  }
+  .svg2-container{
+    width: 300px;
+    height: 300px;
+    background: url(../../../assets/svg/design2.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 14;
+    margin-left: 15px;
+
+  }
+
+}
+@media screen and (max-width: 1080px) {
+ .ultimate-info{
+   .svgs-container{
+    .svg1-container,
+    .svg2-container{
+      width: 240px;
+      margin: 0 10px;
+    }
+   }
+ }
+
+}
+
+// Footer
+.home-footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: Jaldi;
+  width: 100%;
+
+  .footer-info {
+    display: grid;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+
+    .social-media{
+      display: flex;
+      flex-direction: column;
+        p{ text-align: center;
+          font-family: Oleo;
+          margin: 20px 0;
+          font-weight: bold;
+          font-size: 34px;
+        }
+        .social-media_icons{
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          margin: 15px 0;
+
+          i{
+            cursor: pointer;
+            font-size: 24px;
+            margin: 0 6px;
+            transition: all 300ms;
+            &:hover{
+              transform: scale(1.2);
+            }
+          }
+
+        }
+    }
+
+    .contact-info{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      h4{
+        margin: 10px 0;
+        font-family: Oleo;
+        font-size: 34px;
+      }
+      p{
+        margin: 14px 0;
+        font-size: 18px;
+      }
+    }
+
+
+
+
+  }
+  .copy {
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    padding: 8px;
+    background: #F7971E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+}
+
+
+@media  screen and (min-width: 490px) {
+  .skills{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  };
+
+}
+
+@media screen and (min-width: 560px) {
+  .profesional-info{
+    flex-direction: row;
+    .card-info{
+      padding: 10px;
+      p{
+        width: 85%;
+      }
+    }
+
+
+      .photo-container{
+        width: 40%;
+      }
+
+
+  }
+
+  .home-footer >div:last-child{
+    font-size: 18px;
+  }
+
+  .photo-C{
+    transform: scale(1.3);
+  }
+
+};
+
+@media screen and (max-width: 600px) {
+  .ultimate-info{
+    .svgs-container{
+      position: relative;
+      height: 200px;
+      >div:first-child{
+        display: block;
+        margin: 14px;
+        width: 200px;
+      }
+      >div:last-child{
+
+        margin: 14px;
+        width: 200px;
+      }
+
+    }
+  }
+}
+
+@media screen and (min-width: 660px) {
+  .skills{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .skills > div:last-child{
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+  }
+
+  .extra-info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    .card-extra{
+      width: 94%;
+      margin: 28px auto;
+    }
+  };
+
+  .footer-info{
+    flex-direction: row !important;
+    justify-content: center;
+
+    >div {
+      width: 45%;
+    }
+  }
+
+  .photo-C{
+    transform: scale(1.2
+    );
+    margin: 20px;
+  }
+
+}
+@media screen and(max-width: 660px) {
+  .extra-info{
+    .card-extra:nth-child(1){
+      background-color: $red1;
+    };
+    .card-extra:nth-child(2){
+    background-color: $yellow1;
+    };
+    .card-extra:nth-child(3){
+      background-color: $yellow1;
+
+    };
+    .card-extra:nth-child(4){
+      background-color: $red1;
+
+    };
+    .card-extra:nth-child(5){
+      background-color: $red1
+  ;
+    };
+    .card-extra:nth-child(6){
+    background-color: $yellow1;
+
+    };
+  }
+
+  .ultimate-info{
+    .svgs-container{
+      .svg1-container{
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+
+  .skills {
+    padding: 20px;
+  }
+
+  .profesional-info > div:last-child {
+  h1 {
+    font-size: 32px;
+  }
+  h3{
+    font-size: 20px;
+  }
+  p{
+    font-size: 18px;
+  }
+  }
+  .ultimate-info{
+    ul{
+      width: 40%;
+      li{
+        text-align: center;
+        font-size: 18px;
+      }
+
+    };
+
+
+  }
+
+}
+@media screen and (max-width:800px) {
+  .ultimate-info{
+    .svgs-container{
+      .svg2-container{
+        display: none;
+      }
+      .svg1-container{
+        margin-right: 17px;
+        margin-left: auto;
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: 960px) {
+  .photo-C{
+    width: 70%;
+    transform: scale(1.3);
+    margin: 20px;
+
+  }
+  .skills > div {
+    margin-top: 30px;
+  }
+
+  .extra-info  {
+    > .card-extra{
+      width: 80%;
+      padding: 15px;
+      margin: 20px auto;
+    }
+  }
+
+}
+
+@media screen and (min-width: 990px) {
+  .skills{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .skills > div:last-child{
+    grid-column-start: 3;
+    grid-column-end: 4;
+
+  }
+
+  .skills >div:nth-child(9) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .extra-info  {
+    > .card-extra{
+      width: 70%;
+      padding: 15px;
+      margin: 20px auto;
+    }
+  }
+}
+// Skills images
+
+.illustrator-container {
+  background: url(../../../assets/img/Ai1.png);
+
+}
+.photoshop-container{
+  background: url(../../../assets/img/ps1.png);
+
+}
+.corel-container{
+  background: url(../../../assets/img/corel1.png);
+
+}
+.AutoCad-container{
+  background: url(../../../assets/img/autocad1.png);
+
+}
+
+.Figma-container{
+  background: url(../../../assets/img/figma1.png);
+
+}
+
+.zBrush-container{
+  background: url(../../../assets/img/zbrush1.png);
+
+}
+.filmora-container{
+  background: url(../../../assets/img/filmora1.png);
+
+}
+.animate-container{
+  background: url(../../../assets/img/animate1.png);
+
+}
+.teoriaColor-container{
+  background: url(../../../assets/img/teoria1.png);
+
+}
+.diseñoEmpresarial-container{
+  background: url(../../../assets/img/emp1.png);
+
+}
+.extra-title{
+  font-family: Oleo;
+  font-size: 40px;
+  text-align: center;
+}
